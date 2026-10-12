@@ -49,6 +49,7 @@ class Attendee(BaseModel):
 
 class MeetingOutput(BaseModel):
     meeting_title: str = Field(description="Title or subject of the meeting")
+    project_name: Optional[str] = Field(None, description="Project or team name if identifiable from title or content")
     date: Optional[str] = Field(None, description="Date of the meeting if mentioned")
     duration: Optional[str] = Field(None, description="Duration of the meeting if mentioned")
     attendees: List[Attendee] = Field(default_factory=list)

@@ -61,6 +61,7 @@ EXTRACTION RULES:
 - Be concise but complete. Don't add information not present in the transcript.
 - Identify all attendees mentioned by name.
 - Detect the overall meeting sentiment (productive/neutral/tense).
+- For project_name: Look for patterns like "Title | Project Name", "Project: X", "Team: X", or a product/team name consistently mentioned. If the title contains a pipe character (|), the part after it is the project name (e.g. "Sprint 24 Debrief | FS Kriyam" → project_name is "FS Kriyam"). Return null if no project can be identified.
 
 Meeting Transcript:
 ---
@@ -70,6 +71,7 @@ Meeting Transcript:
 Return ONLY a valid JSON object matching this exact structure:
 {{
   "meeting_title": "descriptive title based on content",
+  "project_name": "project or team name if identifiable, else null",
   "date": "if mentioned, else null",
   "duration": "if mentioned, else null",
   "attendees": [{{"name": "...", "role": "if mentioned"}}],
