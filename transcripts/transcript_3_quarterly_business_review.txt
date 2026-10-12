@@ -1,0 +1,73 @@
+Meeting: Q3 Quarterly Business Review
+Date: September 30, 2026
+Duration: 2 hours
+Attendees: Anika (CEO), Rohan (CFO), Meera (VP Sales), Dev (VP Engineering), Tanvi (VP Marketing), Suresh (Head of Customer Success)
+
+---
+
+Anika: Good morning everyone. This is our Q3 QBR. Let's start with financials then move to department reviews.
+
+Rohan: Q3 revenue came in at ₹4.2 crore — that's 12% above our Q3 target of ₹3.75 crore. Gross margin improved to 68% from 63% in Q2, mainly because we renegotiated the AWS contract. However, CAC increased by 18% to ₹8,200 per customer. That's a concern.
+
+Anika: Yes, rising CAC is something we need to address. Meera, what's happening on the sales side?
+
+Meera: We closed 47 new enterprise accounts in Q3, which is a record. But the average sales cycle stretched to 78 days, up from 55 days. The main friction points are the security questionnaire and procurement approval delays on the customer side. We've also been losing deals to Competitor X on pricing.
+
+Anika: What are we doing about Competitor X?
+
+Meera: We've been thinking about introducing a mid-tier pricing plan. It's been discussed internally but no decision has been made yet.
+
+Tanvi: From marketing — we ran three major campaigns in Q3. The LinkedIn campaign had a 4.2% CTR which is excellent. But the Google Ads campaign underperformed — we spent ₹80 lakh and got a 0.8% conversion rate. We need to either optimize or cut that budget.
+
+Anika: I think we should reallocate the Google Ads budget. Tanvi, can you come back with a proposal on where to move that ₹80 lakh by October 15th?
+
+Tanvi: Will do.
+
+Rohan: On the cost side — we're projected to exceed the engineering headcount budget by ₹30 lakh in Q4. Dev, we need to discuss this.
+
+Dev: We have three open roles that we're actively interviewing for. If we fill all three by November, the overage is unavoidable. We could defer one hire to Q1 to stay within budget.
+
+Anika: Let's decide this now. We will defer the senior data engineer hire to Q1 2027 to stay within budget. The two frontend hires proceed as planned.
+
+Rohan: Good, that brings us within ₹5 lakh of the budget. I can absorb that.
+
+Suresh: Customer success metrics — NPS improved from 42 to 58 this quarter, which is significant. Churn dropped to 1.8% monthly, below our 2% target. But we have three enterprise accounts flagged as at-risk: GlobalTech, Infonet, and Samarth Corp. GlobalTech specifically said they'll churn if we don't deliver the custom reporting feature by December.
+
+Anika: That's critical. Dev, what's the status of the custom reporting feature?
+
+Dev: It's scheduled for Q1 delivery. Moving it to Q4 would require pulling engineers off the API v3 work.
+
+Anika: How important is API v3 in Q4?
+
+Dev: It's needed for our partnership with PaymentBridge. If we delay API v3, we risk losing that partnership.
+
+Anika: This is a tough call. We can't lose GlobalTech or the PaymentBridge partnership. Suresh, can you get more time from GlobalTech?
+
+Suresh: I'll try. I'll reach out to their account manager this week and see if mid-January works. I'll report back by October 10th.
+
+Anika: Good. We will hold the decision on custom reporting vs API v3 until we hear from Suresh by October 10th. Dev, please prepare a capacity plan for both scenarios — one where we prioritize custom reporting and one where we prioritize API v3. I need that by October 12th.
+
+Dev: Understood. I'll have both scenarios ready by October 12th.
+
+Anika: On the mid-tier pricing plan Meera mentioned — let's discuss this. Tanvi, what's your take from a positioning standpoint?
+
+Tanvi: A mid-tier plan at around ₹4,000/month could help us compete with Competitor X without cannibalizing our enterprise tier. But we'd need to clearly define feature boundaries.
+
+Meera: Sales would love it. But I want to make sure it doesn't confuse the market.
+
+Anika: Decided — we will pursue a mid-tier pricing plan. Meera and Tanvi will co-lead the definition of the plan. I want a draft proposal with pricing, feature tiers, and go-to-market by October 31st.
+
+Meera: Got it.
+
+Tanvi: We'll have it ready by October 31st.
+
+Rohan: One more item — we need to finalize the Q4 budget by October 20th for the board presentation.
+
+Anika: Yes, Rohan you'll own that. All department heads, please submit your Q4 budget requests to Rohan by October 17th.
+
+Meera: Will do.
+Dev: Confirmed.
+Tanvi: Noted.
+Suresh: Yes.
+
+Anika: Great. To summarize — Q3 was strong on revenue and NPS, but CAC and the competitive pricing gap need attention. We have clear owners and deadlines for everything discussed today.

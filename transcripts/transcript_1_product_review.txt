@@ -1,0 +1,54 @@
+Meeting: Q4 Product Review
+Date: October 10, 2026
+Duration: 60 minutes
+Attendees: Priya (Product Manager), Rahul (Engineering Lead), Sara (Design), Karan (Marketing), Nisha (QA)
+
+---
+
+Priya: Let's get started. This is our Q4 product review. We need to cover the dashboard redesign, the mobile app performance issues, and plan the launch timeline.
+
+Rahul: Sure. On the engineering side, the dashboard redesign is about 80% done. We ran into a performance bottleneck with the data grid component when loading more than 5,000 rows.
+
+Sara: From a design perspective, we had finalized the wireframes last week. Rahul, are the new card components matching the Figma specs?
+
+Rahul: Mostly yes, but there are a few spacing issues. I'll flag them in Jira today and have Aditya fix them by Wednesday.
+
+Priya: Good. Sara, can you do a final design review once Aditya's fixes are in? Let's say by Thursday end of day.
+
+Sara: Absolutely, I'll have the review done by Thursday.
+
+Karan: Regarding the launch — marketing needs at least two weeks after the final build is ready to prepare the campaign assets. I need the final build no later than October 24th.
+
+Priya: Okay, so we've decided the final build deadline is October 24th. Rahul, is that feasible?
+
+Rahul: Tight but yes. We'll need to cut the advanced filter feature from this release though.
+
+Priya: Agreed. We are cutting the advanced filter feature from Q4 scope and deferring it to Q1. That's a firm decision.
+
+Karan: I'll prepare the launch campaign assets by November 7th and share them with the team for review.
+
+Nisha: On QA — I have concerns about the mobile app memory usage. It's spiking to over 400MB on older Android devices. We've discussed this before but it hasn't been resolved.
+
+Rahul: That's a known issue. We haven't had time to investigate the root cause. It might be related to the image caching library.
+
+Priya: Nisha, can you document the specific test scenarios where the spike happens and send them to Rahul by Friday?
+
+Nisha: Yes, I'll do that by Friday.
+
+Rahul: I'll assign Rohan to investigate the memory issue and have a root cause analysis ready by October 20th.
+
+Priya: Perfect. One open question — should we delay the launch if the memory issue isn't fully resolved?
+
+Rahul: I think we should. It affects 30% of our user base on older devices.
+
+Karan: From a marketing standpoint, delaying would be costly. We've already started pre-launch communications.
+
+Priya: Let's revisit this in the next standup once we have the root cause analysis. We don't have enough information to decide right now.
+
+Sara: Also, I wanted to raise — should we add onboarding tooltips for new users? It was mentioned in last month's user feedback.
+
+Priya: That's something we should discuss next quarter. Let's park that for the Q1 planning meeting.
+
+Rahul: Agreed.
+
+Priya: Alright, let me summarize. We're launching the dashboard redesign with the advanced filter cut. The build is due October 24th. Karan handles the campaign. Nisha documents the mobile test cases. Rahul's team investigates memory. See you all at the next standup.

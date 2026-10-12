@@ -1,0 +1,62 @@
+Meeting: Sprint 23 Planning
+Date: October 8, 2026
+Duration: 90 minutes
+Attendees: Vikram (Scrum Master), Deepa (Backend Dev), Amit (Frontend Dev), Sneha (Frontend Dev), Ravi (DevOps), Pooja (Product Owner)
+
+---
+
+Vikram: Welcome to Sprint 23 planning. We have capacity for 42 story points this sprint. Pooja, can you walk us through the priority items?
+
+Pooja: Sure. Top priority is the user authentication refactor — migrating from JWT to OAuth 2.0. It's blocking three other features. Second is the notification service integration. Third is fixing the bulk export bug that clients have been complaining about.
+
+Deepa: The auth refactor is complex. I estimated it at 13 points. We'd need to update the token refresh logic, update all API middleware, and regression test everything. I can lead this but I'll need Amit to pair with me for the middleware updates.
+
+Amit: I can pair with Deepa on the middleware. I'd say Wednesday and Thursday this week. Should we do that?
+
+Deepa: Yes, let's block Wednesday and Thursday for pairing on auth middleware.
+
+Vikram: Decided — Deepa leads the auth refactor, pairs with Amit on Wednesday and Thursday for middleware. Deepa, that's on you to own the ticket and keep the board updated.
+
+Pooja: For the notification service, Sneha, you estimated 8 points last week. Still accurate?
+
+Sneha: Yes, 8 points. But I have a question — are we integrating with Firebase or our own SMTP server? That changes the approach completely.
+
+Pooja: We decided to use Firebase last sprint. That decision was already made by the architecture team.
+
+Sneha: Ah okay, I missed that. Firebase it is then. I'll start on that from day one of the sprint.
+
+Ravi: Before you do, Sneha — the Firebase credentials need to be set up in our secrets manager. I'll do that by end of day Monday.
+
+Sneha: Perfect, I'll start Tuesday then.
+
+Vikram: Good. Ravi, that's an action item for you — set up Firebase credentials in secrets manager by Monday EOD.
+
+Ravi: Confirmed.
+
+Amit: Can we also talk about the bulk export bug? We've been deferring it for two sprints. Clients are frustrated.
+
+Pooja: Yes, it's in this sprint for sure. Amit, can you own that one?
+
+Amit: Yes, I'll fix the bulk export bug. It should take about 3 days. I'll have it done by the end of the first week — so October 11th.
+
+Vikram: Great. One thing we haven't resolved — the CI pipeline has been flaky. We had 6 false failures last sprint. Ravi, what's the plan?
+
+Ravi: I've been investigating. It seems to be a race condition in the integration tests. I need about half a sprint to fix it properly. But I also have the secrets manager task and the infra upgrade for the staging environment.
+
+Vikram: We need to prioritize. Pooja, do you want Ravi on CI stability or the infra upgrade?
+
+Pooja: CI stability first. The false failures are slowing down the whole team. Let's defer the staging infra upgrade to Sprint 24.
+
+Vikram: Decided — staging infra upgrade is deferred to Sprint 24. Ravi owns CI stability fix this sprint and should have initial improvements visible by October 16th.
+
+Ravi: I'll aim for that.
+
+Vikram: Open question — do we have enough capacity for all of this? Let me tally: auth refactor 13, notifications 8, bulk export 5, CI fixes 10... that's 36. We have 6 remaining points. Deepa, do you have anything else?
+
+Deepa: There's a small database indexing task — about 5 points. We've been putting it off and it's causing slow queries on the reports page.
+
+Pooja: Include it. That's been a complaint from the data team for weeks.
+
+Deepa: I'll take that. Done by mid-sprint.
+
+Vikram: Alright, we're at 41 points, within capacity. Sprint 23 is locked. Let's go!

@@ -1,0 +1,74 @@
+Meeting: Production Incident Postmortem — Database Outage Oct 7
+Date: October 9, 2026
+Duration: 75 minutes
+Attendees: Siddharth (SRE Lead), Bhavna (Backend Engineer), Manish (DBA), Leela (VP Engineering), Zaid (Security Engineer)
+
+---
+
+Leela: Let's debrief the October 7th database outage. It lasted 3 hours 20 minutes and impacted roughly 8,000 active users. Siddharth, walk us through the timeline.
+
+Siddharth: At 14:23 on October 7th, we started seeing elevated error rates on the payments API — over 40% of requests were failing. At 14:35, alerts fired for database connection pool exhaustion. By 14:50, we had identified that a long-running query was holding locks and blocking other transactions. We killed the query at 15:40, but it took until 17:43 to fully drain the backlog and restore normal operations.
+
+Leela: What caused the long-running query?
+
+Manish: It was a report generation query deployed that morning as part of the analytics update. The query did a full table scan on the transactions table — about 180 million rows — without using an index. The query had been tested on staging but staging only had 50,000 rows, so the performance difference wasn't caught.
+
+Bhavna: I wrote that query. I take responsibility. The index on the created_at column existed in staging but I used a date function in the WHERE clause — WHERE DATE(created_at) = '2026-10-07' — which prevented the index from being used.
+
+Siddharth: That's a common mistake. The fix is to use a range comparison instead of a function wrapper.
+
+Leela: Okay, so the root causes are: production-staging data volume mismatch, no query performance testing against realistic data, and a query pattern that prevented index use. What are we doing to prevent this?
+
+Manish: First, I'll set up a query timeout on the database — any query running longer than 60 seconds will be automatically killed. I can have that configured by October 12th.
+
+Siddharth: Second, we need production-scale data in staging for performance testing. I'll work with Manish to set up a sanitized data snapshot process. That's a bigger effort — probably two weeks. I'll have a proposal ready by October 16th.
+
+Bhavna: I'll add a query review checklist to our deployment runbook — specifically checking for function calls on indexed columns, missing EXPLAIN plans, and missing limits on large table queries. I'll have the checklist drafted by October 13th.
+
+Zaid: From a security perspective, the incident exposed that our read replicas weren't being used for report queries. All the read-heavy analytics were hitting the primary. We've talked about this before but never enforced it.
+
+Leela: We've been talking about this for six months. We need to decide today. Are we routing all analytics queries to read replicas or not?
+
+Siddharth: Absolutely yes. It's technically straightforward — we route queries using the analytics service's DB connection string.
+
+Manish: I agree. I can update the analytics service connection config to point to the read replica. Two days of work.
+
+Leela: Decided — all analytics and report queries will be routed to read replicas. Manish will implement this by October 14th.
+
+Manish: Confirmed.
+
+Leela: What about the alerting? Why did it take 12 minutes from first elevated errors to our alert firing?
+
+Siddharth: Our alert threshold was set at 50% error rate for 5 minutes. The error rate grew gradually and didn't cross 50% until 12 minutes in. I'll lower the threshold to 20% error rate for 2 minutes. I can update the alerting config today.
+
+Leela: Do it. And while we're at it — did we have a runbook for database connection pool exhaustion?
+
+Siddharth: We had one but it was outdated. It referenced an old tool we no longer use. That's partly why the response was slow.
+
+Leela: Siddharth, please update the runbook for connection pool exhaustion and any other outdated runbooks you find. Can you do a runbook audit by October 20th?
+
+Siddharth: Yes, I'll audit all P1 incident runbooks by October 20th.
+
+Zaid: One more thing — we should do a post-incident security review. The query that caused this had access to the full transactions table. From a least-privilege standpoint, the analytics service shouldn't need write access or access to PII columns.
+
+Leela: Agreed. Zaid, can you do a permissions audit on the analytics service database user?
+
+Zaid: Yes, I'll audit the database permissions for analytics service and report back by October 15th.
+
+Leela: Good. Final open question — should we do a formal customer communication about this outage? We had SLA breaches for at least 15 paying enterprise customers.
+
+Siddharth: We absolutely should. We're required to by our SLAs.
+
+Leela: Agreed. Bhavna, you know the product best — can you draft the customer communication by end of day today and send it to me for review?
+
+Bhavna: Yes, I'll have it to you by 6 PM today.
+
+Leela: I'll review and approve it tonight. We'll send it to customers first thing tomorrow morning.
+
+Siddharth: Should we also do an internal postmortem document for our engineering wiki?
+
+Leela: Yes, Siddharth you'll own that. Write up the full postmortem — timeline, root causes, action items — and publish it to the engineering wiki by October 14th. No blame language.
+
+Siddharth: Will do. I'll use the blameless postmortem template.
+
+Leela: Great. We have a lot of action items from this. Let's reconvene in two weeks to check progress.

@@ -1,0 +1,64 @@
+Meeting: Hiring Panel Debrief — Senior Backend Engineer
+Date: October 9, 2026
+Duration: 45 minutes
+Attendees: Kavya (Hiring Manager), Arjun (Backend Tech Lead), Preethi (Engineering Manager), HR_Ritu (HR Business Partner)
+
+---
+
+Kavya: Let's debrief on today's candidates. We interviewed three people — Shubham, Nalini, and Farhan. Let's go through each.
+
+Arjun: I'll start with Shubham. Strong system design skills. He designed the distributed rate limiter correctly and explained the trade-offs clearly. His coding was solid — solved both problems with optimal time complexity. The concern I had was culture fit. He seemed very process-heavy and was resistant when I asked about rapid prototyping scenarios.
+
+Preethi: I agree. He's technically strong but might struggle in our fast-paced environment. He also mentioned he'd need a 3-month notice period.
+
+Kavya: That's a dealbreaker. We need someone in 6 weeks. Let's move on. Nalini?
+
+Arjun: Nalini was impressive. She's worked on high-scale distributed systems at her current company — 50 million daily active users. Her design was elegant and she proactively called out edge cases I hadn't even thought of. Coding was a bit slower, but correct.
+
+Preethi: I had a great conversation with her about team dynamics. She's a natural mentor. She's managed two junior engineers before. The only downside — she mentioned she has another offer from a competing company and needs a decision by October 14th.
+
+HR_Ritu: That's tight. If we want her, we'd need to make an offer by October 13th at the latest.
+
+Kavya: I think Nalini is our top choice. Is everyone aligned?
+
+Arjun: Yes, I'm aligned. She's the strongest technically.
+
+Preethi: Agreed.
+
+Kavya: Then we're decided — we will extend an offer to Nalini. HR_Ritu, can you prepare the offer letter today so we can send it by end of day tomorrow?
+
+HR_Ritu: Yes, I'll have the draft ready today. What range are we offering?
+
+Kavya: Let's go with ₹32 LPA base plus ESOP. That's within budget and competitive.
+
+HR_Ritu: Got it. I'll send the draft to Kavya for approval by 5 PM today.
+
+Kavya: And I'll review and approve it tonight so we can send it to Nalini first thing tomorrow morning.
+
+Arjun: What about Farhan? Should we keep him in consideration for the junior role we discussed?
+
+Kavya: Walk me through your assessment of Farhan first.
+
+Arjun: Farhan is mid-level at best. He struggled with the concurrency problem and his system design lacked depth. He's better suited for a mid-level role, not senior.
+
+Preethi: I thought he was enthusiastic and eager to learn. Good attitude. But technically not ready for senior yet.
+
+Kavya: Agreed, Farhan is not a fit for the senior role. However, if the junior backend position opens up next quarter, we should reach out to him.
+
+HR_Ritu: I'll add a note in the ATS to follow up with Farhan in Q1 2027 for the junior position.
+
+Kavya: Good. One open question — if Nalini declines our offer, do we restart the search or revisit Shubham if his notice period situation changes?
+
+Arjun: I'd prefer restarting the search. Shubham's culture fit concerns are real.
+
+Preethi: I agree. Restart with a stronger job description emphasizing our pace of work.
+
+Kavya: Agreed in principle, but let's cross that bridge if we need to. For now, our immediate action is getting Nalini's offer out. Anything else?
+
+HR_Ritu: One thing — we should update the job posting status on LinkedIn and the careers page once we make the offer to avoid more inbound applications.
+
+Kavya: Good point. HR_Ritu, can you pause the job posting once the offer is sent tomorrow?
+
+HR_Ritu: Yes, I'll pause it once the offer goes out.
+
+Kavya: Perfect. Let's regroup on Friday to see if Nalini has responded.
